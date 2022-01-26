@@ -1,0 +1,26 @@
+[
+    {
+      "_id": "61f15c3fb4fb2f33d8e00cb2",
+      "firstName": "Peter",
+      "lastName": "Georgiev",
+      "age": 32,
+      "history": [
+        {
+          "desiese": "stress",
+          "treatment": 202
+        }
+      ]
+    },
+    {
+      "_id": "61f15c3fb4fb2f33d8e00cb3",
+      "firstName": "Maria",
+      "lastName": "Angelova",
+      "age": 19,
+      "history": [
+        {
+          "desiese": "fracture",
+          "treatment": 87
+        }
+      ]
+    }
+  ]
