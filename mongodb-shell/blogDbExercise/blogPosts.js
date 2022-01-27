@@ -22,7 +22,7 @@ db.posts.insertMany([
         'comments': [{ 'text': 'Nice to meet you Angelina', 'author': ObjectId('61f1544b727d26fa478da4a6') }]
     },
     {
-        'title': 'I am as sweet baby',
+        'title': 'I am a sweet baby',
         'text': 'Look at my eyes',
         'tags': ['babies', 'love'],
         'creator': ObjectId('61f1544b727d26fa478da4a8'),
