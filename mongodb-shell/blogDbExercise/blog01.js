@@ -7,9 +7,9 @@ use('blog');
 
 // Create 'users' collection
 db.users.insertMany([
-  {'name': 'Momchil Antonov', 'age': 37, 'email': 'ma@gmail.com'},
-  {'name': 'Angelina Gyosheva', 'age': 30, 'email': 'ag@gmail.com'},
-  {'name': 'Karina Antonova', 'age': 1, 'email': 'ka@gmail.com'},
+  { 'name': 'Momchil Antonov', 'age': 37, 'email': 'ma@gmail.com' },
+  { 'name': 'Angelina Gyosheva', 'age': 30, 'email': 'ag@gmail.com' },
+  { 'name': 'Karina Antonova', 'age': 1, 'email': 'ka@gmail.com' },
 ]);
 
 // Check what is inserted in database
