@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "sports",
+    "name": "Sports"
+  },
+  {
+    "_id": "cooking",
+    "name": "Cooking"
+  },
+  {
+    "_id": "dogs",
+    "name": "Dogs"
+  },
+  {
+    "_id": "cats",
+    "name": "Cats"
+  },
+  {
+    "_id": "music",
+    "name": "Music"
+  },
+  {
+    "_id": "fruits",
+    "name": "Fruits"
+  },
+  {
+    "_id": "eating",
+    "name": "Eating"
+  },
+  {
+    "_id": "cars",
+    "name": "Cars"
+  },
+  {
+    "_id": "swimming,",
+    "name": "Swimming"
+  }
+]
