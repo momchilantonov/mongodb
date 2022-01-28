@@ -1,6 +1,18 @@
 #!/bin/bash
 
-mongoimport tv-shows.json -d movieData -c movies --jsonArray --drop
+FILENAME="tv-shows.json"
+DATABASE="movieData"
+COLLECTION="movies"
+
+if [[ ! -e "${FILENAME}" ]]
+then
+  echo "Cannot open ${FILENAME}"
+  exit 1
+fi
+
+echo "Importing ${FILENAME}"
+#this is the important script for mango imports
+mongoimport ${FILENAME} -d ${DATABASE} -c ${COLLECTION} --jsonArray --drop
 
 # -d -> database
 # -c -> collection
