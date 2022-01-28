@@ -1,0 +1,20 @@
+[
+    {
+      "_id": "61f3d2d1506badb3639a8143",
+      "name": "Ivan",
+      "age": 41,
+      "hobbies": [
+        "music",
+        "beer"
+      ]
+    },
+    {
+      "_id": "61f3d2d1506badb3639a8144",
+      "name": "Petar",
+      "age": 25,
+      "hobbies": [
+        "sport",
+        "dogs"
+      ]
+    }
+  ]
