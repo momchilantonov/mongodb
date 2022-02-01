@@ -6,7 +6,7 @@
 
 // Task 1
 
-// Import the data with read-operation-exercise-import-data.sh. The shell file is created separately.
+// Import the data with read-operation-exercise-import-data01.sh. The shell file is created separately.
 
 /*
 #!/bin/bash
