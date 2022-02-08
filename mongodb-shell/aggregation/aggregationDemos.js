@@ -347,3 +347,13 @@ db.personsDemos.aggregate([
         }
     }
 ]).pretty();
+
+// Getting the Length of an Array ($size)
+db.friends.aggregate([
+    {
+        $project: {
+            _id: 0,
+            numScores: { $size: "$examScores" }
+        }
+    }
+]).pretty();
