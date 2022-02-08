@@ -1,10 +1,12 @@
 use('usersData');
 
-// use $match instead find()
+// $match
 db.persons.aggregate([
-    {
-        $match: {
-            gender: 'female'
-        }
-    }
+    { $match: { gender: 'female' } }
+]);
+
+// $group
+db.persons.aggregate([
+    { $match: { gender: 'female' } },
+    { $group: { _id: { state: "$location.state" }, totalPersons: { $sum: 1 } } }
 ]);
