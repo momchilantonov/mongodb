@@ -326,3 +326,14 @@ db.personsDemos.aggregate([
         }
     }
 ]).pretty();
+
+// Remove dublicates ($addToSet)
+db.personsDemos.aggregate([
+    { $unwind: "$hobbies" },
+    {
+        $group: {
+            _id: { age: "$age" },
+            allHobbies: { $addToSet: "$hobbies" }
+        }
+    }
+]).pretty();
