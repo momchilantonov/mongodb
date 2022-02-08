@@ -337,3 +337,13 @@ db.personsDemos.aggregate([
         }
     }
 ]).pretty();
+
+// Using projections with arrays ($slice from arrays)
+db.personsDemos.aggregate([
+    {
+        $project: {
+            _id: 0,
+            examScore: { $slice: ["$examScores", 2, 1] }
+        }
+    }
+]).pretty();
