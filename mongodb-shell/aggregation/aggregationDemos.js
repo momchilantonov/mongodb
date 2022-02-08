@@ -349,7 +349,7 @@ db.personsDemos.aggregate([
 ]).pretty();
 
 // Getting the Length of an Array ($size)
-db.friends.aggregate([
+db.personsDemos.aggregate([
     {
         $project: {
             _id: 0,
@@ -357,3 +357,13 @@ db.friends.aggregate([
         }
     }
 ]).pretty();
+
+//
+db.personsDemos.aggregate([
+    {
+      $project: {
+        _id: 0,
+        scores: { $filter: { input: '$examScores', as: 'sc', cond: { $gt: ["$$sc.score", 60] } } }
+      }
+    }
+  ]).pretty();
