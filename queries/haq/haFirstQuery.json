@@ -1,0 +1,13 @@
+{
+	"aggregate": "OHISearchResultsSummary",
+	"pipeline": [
+		{
+			"$group": {
+				"_id": "$fields.search",
+				"count": {
+					"$sum": 1
+				}
+			}
+		}
+	]
+}
