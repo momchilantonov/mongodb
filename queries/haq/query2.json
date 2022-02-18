@@ -1,0 +1,69 @@
+{
+    "aggregate": "OHISearchResults",
+    "pipeline": [
+        {
+            "$group": {
+                "_id": null,
+                "totalSearchResults": {
+                    "$sum": 1
+                },
+                "completeSearchResults": {
+                    "$sum": {
+                        "$cond": [
+                            {
+                                "$eq": [
+                                    "$fields.search",
+                                    "COMPLETE"
+                                ]
+                            },
+                            1,
+                            0
+                        ]
+                    }
+                },
+                "partiallyCompleteSearchResults": {
+                    "$sum": {
+                        "$cond": [
+                            {
+                                "$eq": [
+                                    "$fields.search",
+                                    "PARTIALLY COMPLETE"
+                                ]
+                            },
+                            1,
+                            0
+                        ]
+                    }
+                },
+                "pendingSearchResults": {
+                    "$sum": {
+                        "$cond": [
+                            {
+                                "$eq": [
+                                    "$fields.search",
+                                    "PENDING"
+                                ]
+                            },
+                            1,
+                            0
+                        ]
+                    }
+                },
+                "errorSearchResults": {
+                    "$sum": {
+                        "$cond": [
+                            {
+                                "$eq": [
+                                    "$fields.search",
+                                    "ERROR"
+                                ]
+                            },
+                            1,
+                            0
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}
