@@ -1,0 +1,48 @@
+{
+  "aggregate": "CrawlToStatementSchema",
+  "pipeline": [
+    {
+      "$project": {
+        "_id": false,
+        "title": "$fields.title",
+        "requestId": "$requestId",
+        "date": {
+          "$dateToString": {
+            "date": "$createdOn",
+            "format": "%Y-%m-%d"
+          }
+        }
+      }
+    },
+    {
+      "$project": {
+        "_id": false,
+        "title": "$title",
+        "requestId": {
+          "$concat": [
+            "$requestId",
+            "-",
+            "$date"
+          ]
+        }
+      }
+    },
+    {
+      "$group": {
+        "_id": {
+          "$concat": [
+            "$title",
+            "--",
+            "$requestId"
+          ]
+        }
+      }
+    },
+    {
+      "$project": {
+        "_id": false,
+        "endProduct": "$_id"
+      }
+    }
+  ]
+}

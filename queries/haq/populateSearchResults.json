@@ -1,0 +1,66 @@
+{
+  "aggregate": "OHISearchResults",
+  "pipeline": [
+    {
+      "$group": {
+        "_id": null,
+        "complete": {
+          "$sum": {
+            "$cond": [
+              {
+                "$eq": [
+                  "$fields.search",
+                  "COMPLETE"
+                ]
+              },
+              1,
+              0
+            ]
+          }
+        },
+        "partiallyComplete": {
+          "$sum": {
+            "$cond": [
+              {
+                "$eq": [
+                  "$fields.search",
+                  "PARTIALLY COMPLETE"
+                ]
+              },
+              1,
+              0
+            ]
+          }
+        },
+        "pending": {
+          "$sum": {
+            "$cond": [
+              {
+                "$eq": [
+                  "$fields.search",
+                  "PENDING"
+                ]
+              },
+              1,
+              0
+            ]
+          }
+        },
+        "error": {
+          "$sum": {
+            "$cond": [
+              {
+                "$eq": [
+                  "$fields.search",
+                  "ERROR"
+                ]
+              },
+              1,
+              0
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
