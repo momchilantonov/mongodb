@@ -1,23 +1,23 @@
 {
-	"insert": "TestSchema",
-	"documets": [
-		{
-			"requestId": "$rand",
-			"name": "Momchil",
-			"age": 37,
-			"status": "onlie"
-		},
-		{
-			"requestId": "$rand",
-			"name": "Angelina",
-			"age": 30,
-			"status": "offline"
-		},
-		{
-			"requestId": "$rand",
-			"name": "Karina",
-			"age": 1,
-			"status": "onlie"
-		}
-	]
+  "insert": "TestSchema",
+  "documets": [
+    {
+      "requestId": "$rand",
+      "name": "Momchil",
+      "age": 37,
+      "status": "onlie"
+    },
+    {
+      "requestId": "$rand",
+      "name": "Angelina",
+      "age": 30,
+      "status": "offline"
+    },
+    {
+      "requestId": "$rand",
+      "name": "Karina",
+      "age": 1,
+      "status": "onlie"
+    }
+  ]
 }

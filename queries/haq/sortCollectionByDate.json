@@ -1,0 +1,26 @@
+{
+  "aggregate": "CrawlToStatementSchema",
+  "pipeline": [
+    {
+      "$group": {
+        "_id": "$fields.title",
+        "requestId": {
+          "$first": "$requestId"
+        },
+        "title": {
+          "$first": "$fields.title"
+        },
+        "dateOn": {
+          "$max": "$createdOn"
+        }
+      }
+    },
+    {
+      "$project": {
+        "_id": "$dateOn",
+        "requestId": "$requestId",
+        "title": "$title"
+      }
+    }
+  ]
+}
