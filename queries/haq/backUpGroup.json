@@ -1,0 +1,32 @@
+{
+    "aggregate": "BackUpBigData",
+    "pipeline": [
+        {
+            "$lookup": {
+                "from": "BigData",
+                "localField": "fields.originRequestId",
+                "foreignField": "requestId",
+                "as": "equalFields"
+            }
+        },
+        {
+            "$match": {
+                "equalFields": {
+                    "$exists": true,
+                    "$ne": []
+                }
+            }
+        },
+        {
+            "$group": {
+                "_id": null,
+                "requestIdlist": {
+                    "$push": {
+                        "requestIdForDelete": "$fields.originRequestId"
+                    }
+                }
+            }
+        }
+    ]
+}
+

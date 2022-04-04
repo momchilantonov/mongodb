@@ -1,0 +1,11 @@
+{
+    "delete": "ClearBigData",
+    "deletes": [
+        {
+            "q": {
+                "requstId": {}
+            },
+            "limit": 0
+        }
+    ]
+}
